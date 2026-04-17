@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-egrep -c "/\"$" sample.log
+egrep -c "/\"$" "$1"
