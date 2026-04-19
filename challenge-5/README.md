@@ -47,8 +47,8 @@ A working Helm chart that can be:
 
 ## Acceptance Criteria
 
-- [ ] `helm lint` passes without errors
-- [ ] `helm template` renders valid Kubernetes manifests
-- [ ] Deployment targets container port 8080
-- [ ] Service correctly routes to the deployment
-- [ ] All hardcoded values are parameterized in values.yaml
+- [x] `helm lint` passes without errors
+- [x] `helm template` renders valid Kubernetes manifests
+- [x] Deployment targets container port 8080
+- [x] Service correctly routes to the deployment
+- [x] All hardcoded values are parameterized in values.yaml
