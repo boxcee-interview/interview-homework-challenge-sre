@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-egrep -c "\d 500 \"" "$1"
+egrep -c "[0-9] 500 \"" "$1"

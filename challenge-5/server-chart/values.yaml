@@ -61,10 +61,16 @@ livenessProbe:
   httpGet:
     path: /
     port: http
+    httpHeaders:
+      - name: Challenge
+        value: orcrist.org
 readinessProbe:
   httpGet:
     path: /
     port: http
+    httpHeaders:
+      - name: Challenge
+        value: orcrist.org
 
 # Additional volumes on the output Deployment definition.
 volumes: []

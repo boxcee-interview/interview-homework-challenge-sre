@@ -11,7 +11,7 @@ One note: the line count is incorrect. It should be 3660. See [count-without-5xx
 ## Count all `GET` requests from `yoko` to `/rrhh` location and if it was successful (`200`)
 ```shell
 ./count-yoko-get-requests.sh sample.log
-# 12
+# 4
 ```
 
 ## How many requests go to `/`?

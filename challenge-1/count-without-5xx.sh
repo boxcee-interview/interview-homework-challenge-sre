@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-WITHOUT=$(egrep -cv " 5\d\d " "$1")
-WITH=$(egrep -c " 5\d\d " "$1")
+WITHOUT=$(egrep -cv " 5[0-9][0-9] " "$1")
+WITH=$(egrep -c " 5[0-9][0-9] " "$1")
 
 if [[ $((WITHOUT + WITH)) == 3360 ]]; then
     echo "success: $WITHOUT"

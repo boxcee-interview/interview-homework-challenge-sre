@@ -1,0 +1,26 @@
+suite: test service
+
+templates:
+  - service.yaml
+
+tests:
+  - it: should render a service
+    asserts:
+      - isKind:
+          of: Service
+
+  - it: should render port correctly
+    set:
+      service.port: 3001
+    asserts:
+      - equal:
+          path: spec.ports[0].port
+          value: 3001
+
+  - it: should render type correctly
+    set:
+      service.type: NodePort
+    asserts:
+      - equal:
+          path: spec.type
+          value: NodePort

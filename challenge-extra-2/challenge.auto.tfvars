@@ -1,0 +1,1 @@
+manifests_folder = "../challenge-extra-1/manifests"

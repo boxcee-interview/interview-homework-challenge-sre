@@ -1,0 +1,46 @@
+suite: test deployment
+
+templates:
+  - deployment.yaml
+
+tests:
+  - it: should render a deployment
+    asserts:
+      - isKind:
+          of: Deployment
+
+  - it: should render image correctly
+    set:
+      image.repository: stefanprodan/podinfo
+      image.tag: v1.2.3
+      image.pullPolicy: Always
+    asserts:
+      - equal:
+          path: spec.template.spec.containers[0].image
+          value: stefanprodan/podinfo:v1.2.3
+      - equal:
+          path: spec.template.spec.containers[0].imagePullPolicy
+          value: Always
+
+  - it: should render replicas correctly
+    set:
+      replicaCount: 2
+    asserts:
+      - equal:
+          path: spec.replicas
+          value: 2          
+
+  - it: should render port correctly
+    set:
+      service.port: 3001
+    asserts:
+      - equal:
+          path: spec.template.spec.containers[0].ports[0].containerPort
+          value: 3001
+
+  - it: should have at least 2 cpu set
+    set: {}
+    asserts:
+      - greaterOrEqual:
+          path: spec.template.spec.containers[0].resources.requests.cpu
+          value: 1
